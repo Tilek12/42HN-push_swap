@@ -6,7 +6,50 @@
 #    By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 11:29:15 by tkubanyc          #+#    #+#              #
-#    Updated: 2024/05/01 11:29:22 by tkubanyc         ###   ########.fr        #
+#    Updated: 2024/05/01 21:27:55 by tkubanyc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = push_swap
+
+CC		= cc
+CFLAGS	= -Wall -Wextra -Werror
+RM		= rm -f
+
+SRCS	= push_swap.c
+HEADER	= push_swap.h
+
+LIBFT_SRC	= libft_own/libft.a
+PRINTF_SRC	= libft_own/ft_printf/libftprintf.a
+GNL_SRC		= libft_own/ft_get_next_line/get_next_line.c \
+				libft_own/ft_get_next_line/get_next_line_utils.c \
+
+OBJDIR	= obj
+OBJS 	= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
+GNL_OBJ = $(patsubst libft_own/%.c, $(OBJDIR)/%, $(GNL_SRC:.c=.o))
+
+all: $(NAME)
+
+$(NAME): $(OBJS) $(GNL_OBJ)
+	$(MAKE) -C libft_own/ft_printf
+	$(MAKE) -C libft_own
+	$(CC) $(CFLAGS) $(GNL_OBJ) $(LIBFT_SRC) $(PRINTF_SRC) -o $(NAME) $(OBJS)
+
+$(OBJDIR)/%.o: %.c $(HEADER) | $(OBJDIR)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
+
+clean:
+	$(MAKE) -C libft_own/ft_printf clean
+	$(MAKE) -C libft_own clean
+	$(RM) -r $(OBJDIR)
+	$(RM) $(addprefix libft_own/ft_get_next_line/, $(notdir $(GNL_SRC:.c=.o)))
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
