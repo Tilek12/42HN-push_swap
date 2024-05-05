@@ -6,7 +6,7 @@
 #    By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 11:29:15 by tkubanyc          #+#    #+#              #
-#    Updated: 2024/05/01 21:27:55 by tkubanyc         ###   ########.fr        #
+#    Updated: 2024/05/05 18:34:57 by tkubanyc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,11 @@ CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -f
 
-SRCS	= push_swap.c
+SRCS	= push_swap.c \
+			chekers.c \
+			input_handler.c \
+			push_swap_utils.c \
+
 HEADER	= push_swap.h
 
 LIBFT_SRC	= libft_own/libft.a
@@ -46,6 +50,8 @@ clean:
 	$(MAKE) -C libft_own clean
 	$(RM) -r $(OBJDIR)
 	$(RM) $(addprefix libft_own/ft_get_next_line/, $(notdir $(GNL_SRC:.c=.o)))
+	$(RM) $(LIBFT_SRC)
+	$(RM) $(PRINTF_SRC)
 
 fclean: clean
 	$(RM) $(NAME)

@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   chekers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/01 13:09:10 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/05 18:04:52 by tkubanyc         ###   ########.fr       */
+/*   Created: 2024/05/05 18:29:24 by tkubanyc          #+#    #+#             */
+/*   Updated: 2024/05/05 18:34:04 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <limits.h>
 
-int	main(int argc, char **argv)
+void	error_handler(t_stack a, char *str_num)
 {
-	t_stack	*a;
-	t_stack	*b;
+	ft_printf("Error");
+}
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
-	input_handler(argc, argv, &a);
-	return (0);
+void	repeat_check(t_stack a, int num)
+{
+	ft_printf("Inside repeat_checker function");
 }
