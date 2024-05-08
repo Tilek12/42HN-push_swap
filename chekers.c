@@ -6,18 +6,39 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 18:29:24 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/05 18:34:04 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/08 11:08:21 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error_handler(t_stack a, char *str_num)
+// In case of error shows the Error message and deallocates memory of stack a
+void	error_handler(t_stack **a)
 {
-	ft_printf("Error");
+	t_stack	*temp;
+
+	ft_printf("Error\n");
+	if (*a != NULL)
+	{
+		while (*a)
+		{
+			temp = *a;
+			*a = (*a)->next;
+			free(temp);
+			*a = NULL;
+		}
+	}
+	exit(EXIT_FAILURE);
 }
 
-void	repeat_check(t_stack a, int num)
+// Checkes for repeating the number in stack a
+int	repeat_check(t_stack *a, int num)
 {
-	ft_printf("Inside repeat_checker function");
+	while (a)
+	{
+		if (a->value == num)
+			return (1);
+		a = a->next;
+	}
+	return (0);
 }

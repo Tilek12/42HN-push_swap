@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:09:56 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/05 18:14:15 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/08 11:03:15 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,22 @@
 
 # include "libft_own/libft.h"
 # include "libft_own/ft_printf/ft_printf.h"
+# include <limits.h>
+# include <stdlib.h>
 
 typedef struct s_stack
 {
-	int				num;
+	int				value;
 	int				index;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack;
 
 void	input_handler(int argc, char **argv, t_stack **a);
-int		ft_atol_error_check(const char *str);
-void	error_handler(t_stack a, char *str_num);
+long	ft_atol(char *str);
+int		count_numbers(char **str);
+void	free_str(char **str);
+void	error_handler(t_stack **a);
+int		repeat_check(t_stack *a, int num);
 
 #endif

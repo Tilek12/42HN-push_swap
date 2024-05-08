@@ -6,12 +6,11 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:09:10 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/05 18:04:52 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/07 11:47:10 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <limits.h>
 
 int	main(int argc, char **argv)
 {

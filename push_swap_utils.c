@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 17:29:53 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/05 18:46:49 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/08 11:16:49 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static	long	is_whitespace(char c)
 		|| c == '\t' || c == '\v')
 		return (1);
 	else
-		return (LONG_MAX);
+		return (0);
 }
 
 static	long	check_int_overflow(long number)
@@ -26,10 +26,11 @@ static	long	check_int_overflow(long number)
 	if ((number > INT_MAX) || (number < INT_MIN))
 		return (LONG_MAX);
 	else
-		return ((int)(number));
+		return (number);
 }
 
-long	ft_atol_error_check(const char *str)
+// Changes strint to long
+long	ft_atol(char *str)
 {
 	int		i;
 	long	sign;
@@ -56,4 +57,31 @@ long	ft_atol_error_check(const char *str)
 		i++;
 	}
 	return (check_int_overflow(result * sign));
+}
+
+// Counts how many numbers are in the string
+int	count_numbers(char **str_num)
+{
+	int counter;
+	int i;
+
+	counter = 0;
+	i = 0;
+	while (str_num[i] != NULL)
+	{
+		counter++;
+		i++;
+	}
+	return counter;
+}
+
+// Deallocates all used memory
+void	free_str(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		free(str[i++]);
+	free(str);
 }
