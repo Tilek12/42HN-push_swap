@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   input_handler_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 17:29:53 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/08 11:16:49 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/09 13:42:31 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ long	ft_atol(char *str)
 	result = 0;
 	while (is_whitespace(str[i]))
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '-' && str[i + 1] == '\0')
+		return (LONG_MAX);
+	else if (str[i] == '-' && (str[i + 1] >= '0') && (str[i + 1] <= '9'))
 	{
-		sign = sign * (-1);
+		sign = (-1);
 		i++;
 	}
-	else if (str[i] == '+')
-		i++;
 	while (str[i])
 	{
 		if ((str[i] >= '0') && (str[i] <= '9'))
@@ -62,8 +62,8 @@ long	ft_atol(char *str)
 // Counts how many numbers are in the string
 int	count_numbers(char **str_num)
 {
-	int counter;
-	int i;
+	int	counter;
+	int	i;
 
 	counter = 0;
 	i = 0;
@@ -72,7 +72,7 @@ int	count_numbers(char **str_num)
 		counter++;
 		i++;
 	}
-	return counter;
+	return (counter);
 }
 
 // Deallocates all used memory
@@ -84,4 +84,5 @@ void	free_str(char **str)
 	while (str[i])
 		free(str[i++]);
 	free(str);
+	str = NULL;
 }
