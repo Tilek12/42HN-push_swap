@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 10:44:37 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/09 13:42:11 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:32:53 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	error_handler(t_stack **stack)
 			temp = *stack;
 			*stack = (*stack)->next;
 			free(temp);
-			*stack = NULL;
 		}
 	}
+	*stack = NULL;
 	exit(EXIT_FAILURE);
 }
 
@@ -83,8 +83,6 @@ static void	fill_in_stack(int nums, char **str_num, t_stack **stack)
 	while (i < nums)
 	{
 		num = ft_atol(str_num[i]);
-		ft_printf("str = %s\n", str_num[i]);
-		ft_printf("num = %d\n", num);
 		if ((num == LONG_MAX) || (repeat_check(*stack, (int)num) == 1))
 			error_handler(stack);
 		add_to_stack(stack, (int)num);

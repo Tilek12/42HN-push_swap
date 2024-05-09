@@ -6,7 +6,7 @@
 #    By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 11:29:15 by tkubanyc          #+#    #+#              #
-#    Updated: 2024/05/09 10:46:38 by tkubanyc         ###   ########.fr        #
+#    Updated: 2024/05/09 19:28:19 by tkubanyc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,10 @@ RM		= rm -f
 SRCS	= push_swap.c \
 			input_handler.c \
 			input_handler_utils.c \
+			operations_push.c \
+			operations_swap.c \
+			operations_rotate.c \
+			operations_rev_rotate.c \
 
 HEADER	= push_swap.h
 
