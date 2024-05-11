@@ -6,7 +6,7 @@
 #    By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 11:29:15 by tkubanyc          #+#    #+#              #
-#    Updated: 2024/05/09 19:28:19 by tkubanyc         ###   ########.fr        #
+#    Updated: 2024/05/10 14:17:10 by tkubanyc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,15 @@ CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -f
 
 SRCS	= push_swap.c \
+			exit_handler.c \
 			input_handler.c \
 			input_handler_utils.c \
 			operations_push.c \
 			operations_swap.c \
 			operations_rotate.c \
 			operations_rev_rotate.c \
+			sorting.c \
+			sorting_utils.c \
 
 HEADER	= push_swap.h
 

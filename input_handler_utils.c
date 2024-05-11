@@ -6,13 +6,17 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 17:29:53 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/09 13:42:31 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/11 12:27:10 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static	long	is_whitespace(char c)
+/*----------------------------------------------------------*/
+/*  Checks if the character is a new line, next line, tab,  */
+/*  the start or the end of line.                           */
+/*----------------------------------------------------------*/
+static long	is_whitespace(char c)
 {
 	if (c == ' ' || c == '\f' || c == '\n' || c == '\r'
 		|| c == '\t' || c == '\v')
@@ -21,7 +25,11 @@ static	long	is_whitespace(char c)
 		return (0);
 }
 
-static	long	check_int_overflow(long number)
+/*-----------------------------------------------------*/
+/*  Checks the number for the int limits.              */
+/*  In case of out of the int limits returns LONG_MAX.  */
+/*-----------------------------------------------------*/
+static long	check_int_overflow(long number)
 {
 	if ((number > INT_MAX) || (number < INT_MIN))
 		return (LONG_MAX);
@@ -29,7 +37,9 @@ static	long	check_int_overflow(long number)
 		return (number);
 }
 
-// Changes strint to long
+/*--------------------------*/
+/*  Changes strint to long  */
+/*--------------------------*/
 long	ft_atol(char *str)
 {
 	int		i;
@@ -59,7 +69,9 @@ long	ft_atol(char *str)
 	return (check_int_overflow(result * sign));
 }
 
-// Counts how many numbers are in the string
+/*---------------------------------------------*/
+/*  Counts how many numbers are in the string  */
+/*---------------------------------------------*/
 int	count_numbers(char **str_num)
 {
 	int	counter;
@@ -75,7 +87,9 @@ int	count_numbers(char **str_num)
 	return (counter);
 }
 
-// Deallocates all used memory
+/*---------------------------------------------*/
+/*  Deallocates all used memory of the string  */
+/*---------------------------------------------*/
 void	free_str(char **str)
 {
 	int	i;

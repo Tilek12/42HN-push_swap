@@ -6,32 +6,15 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 10:44:37 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/09 15:32:53 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/11 11:56:10 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// In case of error shows the Error message and deallocates memory of the stack
-void	error_handler(t_stack **stack)
-{
-	t_stack	*temp;
-
-	ft_printf("Error\n");
-	if (*stack != NULL)
-	{
-		while (*stack)
-		{
-			temp = *stack;
-			*stack = (*stack)->next;
-			free(temp);
-		}
-	}
-	*stack = NULL;
-	exit(EXIT_FAILURE);
-}
-
-// Checkes for repeating the number in the stack
+/*--------------------------------------------*/
+/*  Checks for repeating number in the stack  */
+/*--------------------------------------------*/
 int	repeat_check(t_stack *stack, int num)
 {
 	t_stack	*tmp_node;
@@ -46,7 +29,9 @@ int	repeat_check(t_stack *stack, int num)
 	return (0);
 }
 
-// Adds number into the stack
+/*----------------------------------*/
+/*  Adds new number into the stack  */
+/*----------------------------------*/
 static void	add_to_stack(t_stack **stack, int num)
 {
 	t_stack	*temp;
@@ -57,7 +42,7 @@ static void	add_to_stack(t_stack **stack, int num)
 		temp = temp->next;
 	new_node = (t_stack *)malloc(sizeof(t_stack));
 	if (!new_node)
-		error_handler(stack);
+		exit_failure(stack);
 	new_node->value = num;
 	if (temp != NULL)
 	{
@@ -73,7 +58,9 @@ static void	add_to_stack(t_stack **stack, int num)
 	new_node->next = NULL;
 }
 
-// Fills in the stack with numbers
+/*-----------------------------------*/
+/*  Fills in the stack with numbers  */
+/*-----------------------------------*/
 static void	fill_in_stack(int nums, char **str_num, t_stack **stack)
 {
 	long	num;
@@ -84,13 +71,15 @@ static void	fill_in_stack(int nums, char **str_num, t_stack **stack)
 	{
 		num = ft_atol(str_num[i]);
 		if ((num == LONG_MAX) || (repeat_check(*stack, (int)num) == 1))
-			error_handler(stack);
+			exit_failure(stack);
 		add_to_stack(stack, (int)num);
 		i++;
 	}
 }
 
-// Gets all arguments as numbers and puts them into stack a
+/*------------------------------------------------------------*/
+/*  Gets all arguments as numbers and puts them into stack a  */
+/*------------------------------------------------------------*/
 void	input_handler(int argc, char **argv, t_stack **stack)
 {
 	char	**str_num;
@@ -100,10 +89,10 @@ void	input_handler(int argc, char **argv, t_stack **stack)
 	{
 		str_num = ft_split(argv[1], ' ');
 		if (!str_num)
-			error_handler(stack);
+			exit_failure(stack);
 		nums = count_numbers(str_num);
 		if (nums == 1)
-			exit(EXIT_SUCCESS);
+			exit_success(stack);
 		fill_in_stack(nums, str_num, stack);
 		free_str(str_num);
 	}

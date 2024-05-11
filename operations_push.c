@@ -6,12 +6,16 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 11:25:42 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/09 19:47:44 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/11 13:45:13 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*-------------------------------------------------------------------*/
+/*  Increases or decreases the indexes of all elements in the stack  */
+/*  after adding or removing one element to/from the stack.          */
+/*-------------------------------------------------------------------*/
 static void	update_indexes(t_stack *stack, int sign)
 {
 	while (stack)
@@ -21,6 +25,12 @@ static void	update_indexes(t_stack *stack, int sign)
 	}
 }
 
+/*------------------------------------------------------*/
+/*  Push operation:                                     */
+/*  Takes the first element at the top of source stack  */
+/*  and puts it to the top of the destination stack.    */
+/*  Does nothing if the source stack is empty.          */
+/*------------------------------------------------------*/
 static void	push(t_stack **dst, t_stack **src)
 {
 	t_stack	*src_top;
@@ -42,12 +52,18 @@ static void	push(t_stack **dst, t_stack **src)
 	*dst = src_top;
 }
 
+/*---------------------------------------------------*/
+/*  Pushes the top of stack b to the top of stack a  */
+/*---------------------------------------------------*/
 void	push_a(t_stack **a, t_stack **b)
 {
 	push(a, b);
 	ft_printf("pa\n");
 }
 
+/*---------------------------------------------------*/
+/*  Pushes the top of stack a to the top of stack b  */
+/*---------------------------------------------------*/
 void	push_b(t_stack **b, t_stack **a)
 {
 	push(b, a);
