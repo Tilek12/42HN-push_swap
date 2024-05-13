@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 11:16:42 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/11 13:56:13 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/13 14:31:04 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,28 @@ int	is_sorted(t_stack *stack)
 	return (1);
 }
 
-/*----------------------------------------------*/
-/*  Gets the last element's value in the stack  */
-/*----------------------------------------------*/
-int	last_value(t_stack *stack)
+/*----------------------------------------------------*/
+/*  Gets the value of the first element in the stack  */
+/*----------------------------------------------------*/
+int	first(t_stack *stack)
 {
-	t_stack	*temp;
+	int	first_value;
 
-	temp = stack;
-	while (temp->next != NULL)
-		temp = temp->next;
-	return (temp->value);
+	first_value = stack->value;
+	return (first_value);
+}
+
+/*----------------------------------------------------*/
+/*  Updates the indexes of all elements in the stack  */
+/*----------------------------------------------------*/
+void	update_indexes(t_stack *stack)
+{
+	int	index;
+
+	index = 0;
+	while (stack)
+	{
+		stack->index = index++;
+		stack = stack->next;
+	}
 }

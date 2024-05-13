@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 11:26:28 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/11 13:52:08 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/13 11:58:54 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,21 @@
 /*----------------------------------------------*/
 static void	reverse_rotate(t_stack **stack)
 {
-	t_stack	*first;
 	t_stack	*last;
-	t_stack	*temp;
+	int		index_of_last;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
-	first = *stack;
-	last = first;
+	last = *stack;
 	while (last->next != NULL)
 		last = last->next;
-	last->prev->next = NULL;
-	temp = *stack;
-	while (temp)
-	{
-		temp->index++;
-		temp = temp->next;
-	}
-	last->next = first;
-	last->prev = NULL;
-	last->index = 0;
+	index_of_last = last->index;
+	last->next = *stack;
 	*stack = last;
+	while (last->index != (index_of_last - 1))
+		last = last->next;
+	last->next = NULL;
+	update_indexes(*stack);
 }
 
 /*-------------------------------------------*/
@@ -47,8 +41,8 @@ static void	reverse_rotate(t_stack **stack)
 /*-------------------------------------------*/
 void	rev_rotate_a(t_stack **a)
 {
-	reverse_rotate(a);
 	ft_printf("rra\n");
+	reverse_rotate(a);
 }
 
 /*-------------------------------------------*/
@@ -56,8 +50,8 @@ void	rev_rotate_a(t_stack **a)
 /*-------------------------------------------*/
 void	rev_rotate_b(t_stack **b)
 {
-	reverse_rotate(b);
 	ft_printf("rrb\n");
+	reverse_rotate(b);
 }
 
 /*-------------------------------------------------------*/
@@ -65,7 +59,7 @@ void	rev_rotate_b(t_stack **b)
 /*-------------------------------------------------------*/
 void	rev_rotate_a_and_b(t_stack **a, t_stack **b)
 {
+	ft_printf("rrr\n");
 	reverse_rotate(a);
 	reverse_rotate(b);
-	ft_printf("rrr\n");
 }

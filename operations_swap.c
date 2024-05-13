@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 11:25:17 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/11 13:46:20 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/13 12:06:01 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,12 @@ static void	swap(t_stack **stack)
 		return ;
 	first = *stack;
 	second = (*stack)->next;
-	first->index = 1;
-	first->next = second->next;
-	first->prev = second;
-	second->index = 0;
+	*stack = second->next;
 	second->next = first;
-	second->prev = NULL;
-	if (first->next != NULL)
-		first->next->prev = first;
+	first->next = *stack;
 	*stack = second;
+	second->index = 0;
+	first->index = 1;
 }
 
 /*----------------------------------------------------*/
@@ -42,8 +39,8 @@ static void	swap(t_stack **stack)
 /*----------------------------------------------------*/
 void	swap_a(t_stack **a)
 {
-	swap(a);
 	ft_printf("sa\n");
+	swap(a);
 }
 
 /*----------------------------------------------------*/
@@ -51,8 +48,8 @@ void	swap_a(t_stack **a)
 /*----------------------------------------------------*/
 void	swap_b(t_stack **b)
 {
-	swap(b);
 	ft_printf("sb\n");
+	swap(b);
 }
 
 /*----------------------------------------------------------------*/
@@ -60,7 +57,7 @@ void	swap_b(t_stack **b)
 /*----------------------------------------------------------------*/
 void	swap_a_and_b(t_stack **a, t_stack **b)
 {
+	ft_printf("ss\n");
 	swap(a);
 	swap(b);
-	ft_printf("ss\n");
 }

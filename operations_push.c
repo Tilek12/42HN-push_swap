@@ -6,24 +6,11 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 11:25:42 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/11 13:45:13 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/13 10:05:52 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*-------------------------------------------------------------------*/
-/*  Increases or decreases the indexes of all elements in the stack  */
-/*  after adding or removing one element to/from the stack.          */
-/*-------------------------------------------------------------------*/
-static void	update_indexes(t_stack *stack, int sign)
-{
-	while (stack)
-	{
-		stack->index += sign;
-		stack = stack->next;
-	}
-}
 
 /*------------------------------------------------------*/
 /*  Push operation:                                     */
@@ -41,15 +28,10 @@ static void	push(t_stack **dst, t_stack **src)
 	src_top = *src;
 	dst_top = *dst;
 	*src = src_top->next;
-	if (*src != NULL)
-		(*src)->prev = NULL;
-	update_indexes(*src, -1);
-	update_indexes(*dst, 1);
-	if (dst_top != NULL)
-		dst_top->prev = src_top;
 	src_top->next = dst_top;
-	src_top->prev = NULL;
 	*dst = src_top;
+	update_indexes(*dst);
+	update_indexes(*src);
 }
 
 /*---------------------------------------------------*/
@@ -57,8 +39,8 @@ static void	push(t_stack **dst, t_stack **src)
 /*---------------------------------------------------*/
 void	push_a(t_stack **a, t_stack **b)
 {
-	push(a, b);
 	ft_printf("pa\n");
+	push(a, b);
 }
 
 /*---------------------------------------------------*/
@@ -66,6 +48,6 @@ void	push_a(t_stack **a, t_stack **b)
 /*---------------------------------------------------*/
 void	push_b(t_stack **b, t_stack **a)
 {
-	push(b, a);
 	ft_printf("pb\n");
+	push(b, a);
 }

@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:09:56 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/10 18:54:13 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/13 14:31:39 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ typedef struct s_stack
 	int				value;
 	int				index;
 	struct s_stack	*next;
-	struct s_stack	*prev;
 }	t_stack;
 
 void	input_handler(int argc, char **argv, t_stack **a);
@@ -43,8 +42,10 @@ void	rev_rotate_a(t_stack **a);
 void	rev_rotate_b(t_stack **b);
 void	rev_rotate_a_and_b(t_stack **a, t_stack **b);
 void	sorting(t_stack **a, t_stack **b);
+void	sort_3_elements_in_a(t_stack **a);
 int		count_elements(t_stack *stack);
 int		is_sorted(t_stack *stack);
-int		last_value(t_stack *stack);
+int		first(t_stack *stack);
+void	update_indexes(t_stack *stack);
 
 #endif

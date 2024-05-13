@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 11:26:00 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/11 13:48:35 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/13 11:47:23 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,17 @@ static void	rotate(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*last;
-	t_stack	*temp;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
 	first = *stack;
-	last = first;
+	last = *stack;
 	while (last->next != NULL)
 		last = last->next;
 	*stack = (*stack)->next;
-	(*stack)->prev = NULL;
-	temp = *stack;
-	while (temp)
-	{
-		temp->index--;
-		temp = temp->next;
-	}
 	last->next = first;
-	first->prev = last;
 	first->next = NULL;
-	first->index = last->index + 1;
+	update_indexes(*stack);
 }
 
 /*-----------------------------------*/
@@ -48,8 +39,8 @@ static void	rotate(t_stack **stack)
 /*-----------------------------------*/
 void	rotate_a(t_stack **a)
 {
-	rotate(a);
 	ft_printf("ra\n");
+	rotate(a);
 }
 
 /*-----------------------------------*/
@@ -57,8 +48,8 @@ void	rotate_a(t_stack **a)
 /*-----------------------------------*/
 void	rotate_b(t_stack **b)
 {
-	rotate(b);
 	ft_printf("rb\n");
+	rotate(b);
 }
 
 /*-----------------------------------------------*/
@@ -66,7 +57,7 @@ void	rotate_b(t_stack **b)
 /*-----------------------------------------------*/
 void	rotate_a_and_b(t_stack **a, t_stack **b)
 {
+	ft_printf("rr\n");
 	rotate(a);
 	rotate(b);
-	ft_printf("rr\n");
 }

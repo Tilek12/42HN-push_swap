@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 10:44:37 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/11 11:56:10 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/13 12:04:13 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ static void	add_to_stack(t_stack **stack, int num)
 		new_node->index = 0;
 		*stack = new_node;
 	}
-	new_node->prev = temp;
 	new_node->next = NULL;
 }
 
@@ -97,5 +96,5 @@ void	input_handler(int argc, char **argv, t_stack **stack)
 		free_str(str_num);
 	}
 	else
-		fill_in_stack(argc - 1, (argv + 1), stack);
+		fill_in_stack((argc - 1), (argv + 1), stack);
 }
