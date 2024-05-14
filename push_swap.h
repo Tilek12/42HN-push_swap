@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:09:56 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/13 14:31:39 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/14 18:33:43 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,18 @@ void	rev_rotate_b(t_stack **b);
 void	rev_rotate_a_and_b(t_stack **a, t_stack **b);
 void	sorting(t_stack **a, t_stack **b);
 void	sort_3_elements_in_a(t_stack **a);
+void	sort_big_stack(t_stack **a, t_stack **b, int elements);
+void	sort_small_stack(t_stack **a, t_stack **b, int elements);
+int		is_element_closer_to_top(int index, int elements);
 int		count_elements(t_stack *stack);
-int		is_sorted(t_stack *stack);
-int		first(t_stack *stack);
 void	update_indexes(t_stack *stack);
+int		is_sorted(t_stack *stack);
+int		ft_sqrt(int n);
+int		find_index_of_smallest(t_stack *stack);
+int		find_value_of_smallest(t_stack *stack);
+int		find_index_of_biggest(t_stack *stack);
+int		find_value_of_biggest(t_stack *stack);
+void	move_to_b(t_stack **a, t_stack **b, int elements);
+void	move_to_a(t_stack **a, t_stack **b);
 
 #endif

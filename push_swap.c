@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:09:10 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/13 12:16:15 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/14 18:01:13 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
-	// t_stack	*temp_a;
-	// t_stack	*temp_b;
 
 	a = NULL;
 	b = NULL;
@@ -25,22 +23,5 @@ int	main(int argc, char **argv)
 		return (1);
 	input_handler(argc, argv, &a);
 	sorting(&a, &b);
-	// ft_printf("-------------------------------\n");
-	// temp_a = a;
-	// while (temp_a)
-	// {
-	// 	ft_printf("[%d] element in stack a is: %d\n", temp_a->index, temp_a->value);
-	// 	temp_a = temp_a->next;
-	// }
-	// ft_printf("-------------------------------\n");
-	// temp_b = b;
-	// while (temp_b)
-	// {
-	// 	ft_printf("[%d] element in stack b is: %d\n", temp_b->index, temp_b->value);
-	// 	temp_b = temp_b->next;
-	// }
-	// ft_printf("-------------------------------\n");
-	free_stack(&a);
-	free_stack(&b);
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 11:29:15 by tkubanyc          #+#    #+#              #
-#    Updated: 2024/05/13 12:16:55 by tkubanyc         ###   ########.fr        #
+#    Updated: 2024/05/14 18:35:55 by tkubanyc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ SRCS	= push_swap.c \
 			operations_rotate.c \
 			operations_rev_rotate.c \
 			sorting.c \
-			sorting_utils.c \
+			sort_3_elements.c \
+			sort_small_stack.c \
+			sort_big_stack.c \
 
 HEADER	= push_swap.h
 
