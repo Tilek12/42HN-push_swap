@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 11:25:42 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/13 10:05:52 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/17 20:11:56 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 /*  and puts it to the top of the destination stack.    */
 /*  Does nothing if the source stack is empty.          */
 /*------------------------------------------------------*/
-static void	push(t_stack **dst, t_stack **src)
+void	push(t_stack **dst, t_stack **src)
 {
 	t_stack	*src_top;
 	t_stack	*dst_top;

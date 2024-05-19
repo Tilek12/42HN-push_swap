@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 19:41:47 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/14 18:31:15 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/15 15:13:21 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,25 @@
 /*----------------------------------------------------*/
 /*  Gets the value of the first element in the stack  */
 /*----------------------------------------------------*/
-int	first(t_stack *stack)
+static int	first(t_stack *stack)
 {
-	int	first_value;
-
-	first_value = stack->value;
-	return (first_value);
+	return (stack->value);
 }
 
 /*-----------------------------------------------------*/
 /*  Gets the value of the second element in the stack  */
 /*-----------------------------------------------------*/
-int	second(t_stack *stack)
+static int	second(t_stack *stack)
 {
-	int	second_value;
-
-	second_value = stack->next->value;
-	return (second_value);
+	return (stack->next->value);
 }
 
-/*---------------------------------------------------*/
-/*  Gets the value of the last element in the stack  */
-/*---------------------------------------------------*/
-int	last(t_stack *stack)
+/*----------------------------------------------------*/
+/*  Gets the value of the third element in the stack  */
+/*----------------------------------------------------*/
+static int	third(t_stack *stack)
 {
-	t_stack	*temp;
-
-	temp = stack;
-	while (temp->next != NULL)
-		temp = temp->next;
-	return (temp->value);
+	return (stack->next->next->value);
 }
 
 /*--------------------------------------*/
@@ -52,20 +41,20 @@ int	last(t_stack *stack)
 /*--------------------------------------*/
 void	sort_3_elements_in_a(t_stack **a)
 {
-	if ((first(*a) > second(*a)) && (second(*a) > last(*a)))
+	if ((first(*a) > second(*a)) && (second(*a) > third(*a)))
 	{
 		swap_a(a);
 		rev_rotate_a(a);
 	}
-	else if ((first(*a) > last(*a)) && (last(*a) > second(*a)))
+	else if ((first(*a) > third(*a)) && (third(*a) > second(*a)))
 		rotate_a(a);
-	else if ((first(*a) > last(*a)) && (second(*a) > last(*a)))
+	else if ((first(*a) > third(*a)) && (second(*a) > third(*a)))
 		rev_rotate_a(a);
-	else if ((second(*a) > last(*a)) && (last(*a) > first(*a)))
+	else if ((second(*a) > third(*a)) && (third(*a) > first(*a)))
 	{
 		rev_rotate_a(a);
 		swap_a(a);
 	}
-	else if ((first(*a) > second(*a)) && (last(*a) > first(*a)))
+	else if ((first(*a) > second(*a)) && (third(*a) > first(*a)))
 		swap_a(a);
 }

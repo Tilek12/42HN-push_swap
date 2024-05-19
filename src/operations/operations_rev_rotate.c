@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 11:26:28 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/13 11:58:54 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/17 20:12:02 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 /*  Shift down all elements of the stack by 1.  */
 /*  The last element becomes the first one.     */
 /*----------------------------------------------*/
-static void	reverse_rotate(t_stack **stack)
+void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*last;
 	int		index_of_last;

@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 16:52:48 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/14 18:00:09 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/15 15:16:51 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	is_element_closer_to_top(int index, int elements)
 /*--------------------------------------------------------*/
 int	find_index_of_smallest(t_stack *stack)
 {
-	t_stack	*temp;
-	int		min_value;
-	int		min_index;
+	t_stack		*temp;
+	int			min_value;
+	int			min_index;
 
 	temp = stack;
 	min_value = INT_MAX;
@@ -60,14 +60,14 @@ int	find_value_of_smallest(t_stack *stack)
 	while (temp)
 	{
 		if (temp->value < min_value)
-		{
 			min_value = temp->value;
-		}
 		temp = temp->next;
 	}
 	return (min_value);
 }
 
+/*---------------------------------------------------*/
+/*  Sorts only small stacks. Useless for big stacks  */
 /*---------------------------------------------------------------------*/
 /*  A modified version of Selection Sort:                              */
 /*  1. Finds the smallest number in stack a and brings it to the top.  */
@@ -76,8 +76,6 @@ int	find_value_of_smallest(t_stack *stack)
 /*  4. Sorts 3 elements in stack a.                                    */
 /*  5. Pushes all elements from stack b back to stack a.               */
 /*---------------------------------------------------------------------*/
-/*  Sorts only small stacks. Useless for big stacks  */
-/*---------------------------------------------------*/
 void	sort_small_stack(t_stack **a, t_stack **b, int elements)
 {
 	int	min_value;

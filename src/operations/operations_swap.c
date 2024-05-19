@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 11:25:17 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/13 12:06:01 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/17 20:12:21 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 /*  Swaps the first 2 elements at the top of the stack.  */
 /*  Does nothing if there is only one or no elements.    */
 /*-------------------------------------------------------*/
-static void	swap(t_stack **stack)
+void	swap(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*second;

@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 10:44:37 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/13 12:04:13 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/18 13:19:38 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	repeat_check(t_stack *stack, int num)
 	tmp_node = stack;
 	while (tmp_node != NULL)
 	{
-		if (tmp_node->value == num)
+		if (tmp_node->real_value == num)
 			return (1);
 		tmp_node = tmp_node->next;
 	}
@@ -43,7 +43,8 @@ static void	add_to_stack(t_stack **stack, int num)
 	new_node = (t_stack *)malloc(sizeof(t_stack));
 	if (!new_node)
 		exit_failure(stack);
-	new_node->value = num;
+	new_node->real_value = num;
+	new_node->value = 0;
 	if (temp != NULL)
 	{
 		new_node->index = temp->index + 1;
@@ -97,4 +98,5 @@ void	input_handler(int argc, char **argv, t_stack **stack)
 	}
 	else
 		fill_in_stack((argc - 1), (argv + 1), stack);
+	update_stack_values(stack, count_elements(*stack));
 }
