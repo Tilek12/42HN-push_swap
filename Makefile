@@ -6,7 +6,7 @@
 #    By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 11:29:15 by tkubanyc          #+#    #+#              #
-#    Updated: 2024/05/19 12:16:34 by tkubanyc         ###   ########.fr        #
+#    Updated: 2024/05/19 13:25:11 by tkubanyc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,13 +69,13 @@ CHECKER_SRC = $(BONUS_DIR)/checker_bonus.c \
 HEADER = $(INCLUDE_DIR)/push_swap.h
 HEADER_BONUS = $(INCLUDE_DIR)/push_swap_bonus.h
 
-LIBFT_DIR = libft
-LIBFT = $(LIBFT_DIR)/libft.a
-PRINTF_DIR = $(LIBFT_DIR)/ft_printf
-PRINTF = $(PRINTF_DIR)/libftprintf.a
-GNL_SRCS = $(LIBFT_DIR)/ft_get_next_line/get_next_line.c \
+LIBFT_DIR	= libft
+LIBFT		= $(LIBFT_DIR)/libft.a
+PRINTF_DIR	= $(LIBFT_DIR)/ft_printf
+PRINTF		= $(PRINTF_DIR)/libftprintf.a
+GNL_SRCS	= $(LIBFT_DIR)/ft_get_next_line/get_next_line.c \
 			$(LIBFT_DIR)/ft_get_next_line/get_next_line_utils.c
-GNL_OBJS = $(patsubst $(LIBFT_DIR)/ft_get_next_line/%.c, $(OBJDIR)/ft_get_next_line/%.o, $(GNL_SRCS))
+GNL_OBJS	= $(patsubst $(LIBFT_DIR)/ft_get_next_line/%.c, $(OBJDIR)/ft_get_next_line/%.o, $(GNL_SRCS))
 
 OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJDIR)/%.o, $(SRCS))
 CHECKER_OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJDIR)/%.o, $(CHECKER_SRC))

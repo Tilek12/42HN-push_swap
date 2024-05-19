@@ -6,12 +6,15 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:44:55 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/18 13:24:54 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/19 13:26:07 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
+/*-------------------------------------*/
+/*  Recognizes the given instructions  */
+/*-------------------------------------*/
 void	cmd_recognition(char *cmd, t_stack **a, t_stack **b, int *error)
 {
 	if ((ft_strncmp(cmd, "sa\n", 3) == 0) && (ft_strlen(cmd) == 3))
@@ -40,6 +43,10 @@ void	cmd_recognition(char *cmd, t_stack **a, t_stack **b, int *error)
 		(*error)++;
 }
 
+/*-------------------------------------------------------------------*/
+/*  Starts running all instructions recieved by standart input       */
+/*  and checks if stack a is sorted and stack b is empty at the end  */
+/*-------------------------------------------------------------------*/
 void	command_handler(t_stack **a, t_stack **b)
 {
 	char	*command;
