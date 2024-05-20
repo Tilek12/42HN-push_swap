@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 14:06:57 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/19 12:13:24 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/20 11:56:01 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	exit_failure(t_stack **stack)
 {
 	t_stack	*temp;
 
-	ft_printf("Error\n");
+	write(2, "Error\n", 6);
 	if (*stack != NULL)
 	{
 		while (*stack)

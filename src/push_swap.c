@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:09:10 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/15 15:25:39 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/20 11:55:49 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
+	if (argc == 1)
 		return (1);
 	input_handler(argc, argv, &a);
 	sorting(&a, &b);

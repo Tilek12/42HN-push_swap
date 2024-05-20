@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 13:09:56 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/19 11:48:45 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/20 12:03:31 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ typedef struct s_stack
 
 void	input_handler(int argc, char **argv, t_stack **a);
 void	update_stack_values(t_stack **stack, int elements);
+int		is_number(char *str);
 int		count_numbers(char **str);
 void	free_str(char **str);
 long	ft_atol(char *str);
-void	ft_putstr(char *s);
 void	exit_failure(t_stack **stack);
 void	exit_success(t_stack **stack);
 void	free_stack(t_stack **stack);

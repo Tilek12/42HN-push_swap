@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 17:29:53 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/11 12:27:10 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/19 20:31:11 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ long	ft_atol(char *str)
 	result = 0;
 	while (is_whitespace(str[i]))
 		i++;
-	if (str[i] == '-' && str[i + 1] == '\0')
+	if ((str[i] == '-' && str[i + 1] == '\0') || (str[i] == '\0'))
 		return (LONG_MAX);
 	else if (str[i] == '-' && (str[i + 1] >= '0') && (str[i + 1] <= '9'))
 	{

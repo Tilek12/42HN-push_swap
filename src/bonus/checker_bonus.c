@@ -6,15 +6,15 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 10:44:55 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/19 13:26:07 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/19 19:28:41 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-/*-------------------------------------*/
-/*  Recognizes the given instructions  */
-/*-------------------------------------*/
+/*---------------------------------*/
+/*  Recognizes given instructions  */
+/*---------------------------------*/
 void	cmd_recognition(char *cmd, t_stack **a, t_stack **b, int *error)
 {
 	if ((ft_strncmp(cmd, "sa\n", 3) == 0) && (ft_strlen(cmd) == 3))
@@ -60,13 +60,13 @@ void	command_handler(t_stack **a, t_stack **b)
 			break ;
 		cmd_recognition(command, a, b, &error);
 		free(command);
+		if (error > 0)
+		{
+			free_stack(b);
+			exit_failure(a);
+		}
 	}
-	if (error > 0)
-	{
-		free_stack(b);
-		exit_failure(a);
-	}
-	if ((is_sorted(*a) == 1) && (count_elements(*b) == 0))
+	if (is_sorted(*a) && (count_elements(*b) == 0))
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
@@ -81,7 +81,7 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
+	if (argc == 1)
 		return (1);
 	input_handler(argc, argv, &a);
 	command_handler(&a, &b);

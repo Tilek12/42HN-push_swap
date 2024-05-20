@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 11:16:11 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/18 13:18:19 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/19 19:31:11 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	sorting(t_stack **a, t_stack **b)
 	int	elements;
 
 	elements = count_elements(*a);
-	if (is_sorted(*a) == 1)
+	if (is_sorted(*a) || (elements == 1))
 		exit_success(a);
 	else
 	{
@@ -33,7 +33,7 @@ void	sorting(t_stack **a, t_stack **b)
 		else
 			sort_big_stack(a, b, elements);
 	}
-	if (is_sorted(*a) == 0)
+	if (!is_sorted(*a))
 	{
 		free_stack(b);
 		exit_failure(a);

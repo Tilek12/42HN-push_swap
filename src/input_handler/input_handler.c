@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 10:44:37 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/18 13:19:38 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/20 11:40:57 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,36 @@ static void	fill_in_stack(int nums, char **str_num, t_stack **stack)
 	i = 0;
 	while (i < nums)
 	{
+		if (!is_number(str_num[i]))
+			exit_failure(stack);
 		num = ft_atol(str_num[i]);
 		if ((num == LONG_MAX) || (repeat_check(*stack, (int)num) == 1))
 			exit_failure(stack);
 		add_to_stack(stack, (int)num);
 		i++;
 	}
+}
+
+/*---------------------------------------------*/
+/*  Checks if the are any numbers in a string  */
+/*---------------------------------------------*/
+int	is_number(char *str)
+{
+	int	i;
+	int	num;
+
+	num = 0;
+	i = 0;
+	while (str[i])
+	{
+		if (ft_isdigit(str[i]))
+			num++;
+		i++;
+	}
+	if (num > 0)
+		return (1);
+	else
+		return (0);
 }
 
 /*------------------------------------------------------------*/
@@ -87,12 +111,12 @@ void	input_handler(int argc, char **argv, t_stack **stack)
 
 	if (argc == 2)
 	{
+		if ((argv[1][0] == '\0') || !is_number(argv[1]))
+			exit_failure(stack);
 		str_num = ft_split(argv[1], ' ');
 		if (!str_num)
 			exit_failure(stack);
 		nums = count_numbers(str_num);
-		if (nums == 1)
-			exit_success(stack);
 		fill_in_stack(nums, str_num, stack);
 		free_str(str_num);
 	}
