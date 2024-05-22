@@ -6,7 +6,7 @@
 #    By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/01 11:29:15 by tkubanyc          #+#    #+#              #
-#    Updated: 2024/05/19 13:25:11 by tkubanyc         ###   ########.fr        #
+#    Updated: 2024/05/20 18:29:16 by tkubanyc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SORTING_OBJDIR = $(OBJDIR)/sorting
 
 SRCS = $(SRC_DIR)/push_swap.c \
 		$(EXIT_HANDLER_DIR)/exit_handler.c \
+		$(INPUT_HANDLER_DIR)/input_checker.c \
 		$(INPUT_HANDLER_DIR)/input_handler.c \
 		$(INPUT_HANDLER_DIR)/input_handler_utils.c \
 		$(INPUT_HANDLER_DIR)/update_stack_values.c \
@@ -53,6 +54,7 @@ CHECKER_SRC = $(BONUS_DIR)/checker_bonus.c \
 				$(BONUS_DIR)/operations_rotate_bonus.c \
 				$(BONUS_DIR)/operations_rev_rotate_bonus.c \
 				$(EXIT_HANDLER_DIR)/exit_handler.c \
+				$(INPUT_HANDLER_DIR)/input_checker.c \
 				$(INPUT_HANDLER_DIR)/input_handler.c \
 				$(INPUT_HANDLER_DIR)/input_handler_utils.c \
 				$(INPUT_HANDLER_DIR)/update_stack_values.c \

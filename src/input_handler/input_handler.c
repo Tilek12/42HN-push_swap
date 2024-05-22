@@ -6,28 +6,11 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 10:44:37 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/20 11:40:57 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/22 15:38:39 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*--------------------------------------------*/
-/*  Checks for repeating number in the stack  */
-/*--------------------------------------------*/
-int	repeat_check(t_stack *stack, int num)
-{
-	t_stack	*tmp_node;
-
-	tmp_node = stack;
-	while (tmp_node != NULL)
-	{
-		if (tmp_node->real_value == num)
-			return (1);
-		tmp_node = tmp_node->next;
-	}
-	return (0);
-}
 
 /*----------------------------------*/
 /*  Adds new number into the stack  */
@@ -69,36 +52,12 @@ static void	fill_in_stack(int nums, char **str_num, t_stack **stack)
 	i = 0;
 	while (i < nums)
 	{
-		if (!is_number(str_num[i]))
-			exit_failure(stack);
 		num = ft_atol(str_num[i]);
-		if ((num == LONG_MAX) || (repeat_check(*stack, (int)num) == 1))
+		if (num == LONG_MAX)
 			exit_failure(stack);
 		add_to_stack(stack, (int)num);
 		i++;
 	}
-}
-
-/*---------------------------------------------*/
-/*  Checks if the are any numbers in a string  */
-/*---------------------------------------------*/
-int	is_number(char *str)
-{
-	int	i;
-	int	num;
-
-	num = 0;
-	i = 0;
-	while (str[i])
-	{
-		if (ft_isdigit(str[i]))
-			num++;
-		i++;
-	}
-	if (num > 0)
-		return (1);
-	else
-		return (0);
 }
 
 /*------------------------------------------------------------*/
@@ -111,16 +70,24 @@ void	input_handler(int argc, char **argv, t_stack **stack)
 
 	if (argc == 2)
 	{
-		if ((argv[1][0] == '\0') || !is_number(argv[1]))
+		if ((argv[1][0] == '\0') || is_spaces_only(argv[1]))
 			exit_failure(stack);
 		str_num = ft_split(argv[1], ' ');
-		if (!str_num)
+		if (!str_num || !if_all_numbers(str_num)
+			|| is_repeated(str_num) || !is_int(str_num))
+		{
+			free_str(str_num);
 			exit_failure(stack);
+		}
 		nums = count_numbers(str_num);
 		fill_in_stack(nums, str_num, stack);
 		free_str(str_num);
 	}
 	else
+	{
+		if (!if_all_numbers(argv + 1) || is_repeated(argv + 1))
+			exit_failure(stack);
 		fill_in_stack((argc - 1), (argv + 1), stack);
+	}
 	update_stack_values(stack, count_elements(*stack));
 }

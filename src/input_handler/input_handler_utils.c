@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 17:29:53 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/05/19 20:31:11 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/05/20 15:25:35 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,13 @@ void	free_str(char **str)
 	int	i;
 
 	i = 0;
-	while (str[i])
-		free(str[i++]);
-	free(str);
-	str = NULL;
+	if (str != NULL)
+	{
+		while (str[i])
+			free(str[i++]);
+		free(str);
+		str = NULL;
+	}
+	else
+		return ;
 }
