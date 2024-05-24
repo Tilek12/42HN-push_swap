@@ -79,7 +79,7 @@ bigger than an integer and/or there are duplicates.
 :eight_spoked_asterisk: **V.4 Benchmark**
 
 To validate this project, you must perform certain sorts with a minimal number of operations:
-- For a **minimalist validation** (that implies a minimal grade of 80)), you must be
+- For a **minimalist validation** (that implies a minimal grade of 80), you must be
 able to **sort 100 random numbers in fewer than 700 operations**.
 - For **maximal project validation** and thus to be able to achieve the bonuses, you
 must fulfill the first step above, but also for **500 random numbers**, there should
@@ -92,13 +92,14 @@ be **no more than 5500 operations**.
 
 Checker program checks if the given instructions sorts the stack.
 
-**Program name**  - checker\
-**Turn in files** - *.h, *.c\
-**Makefile**      - bonus\
-**Arguments**     - stack a: A list of integers\
-**External functs.** - read, write, malloc, free, exit, ft_printf and any equivalent YOU coded\
-**Libft authorized** - Yes\
-**Description**   - Execute the sorting instructions
+**Program name** | checker
+|:---|:---|
+**Turn in files** | *.h, *.c
+**Makefile** | bonus
+**Arguments** | stack a: A list of integers
+**External functs.** | read, write, malloc, free, exit, ft_printf and any equivalent YOU coded
+**Libft authorized** | Yes
+**Description** | Execute the sorting instructions
 
 :eight_pointed_black_star: Rules:
 - Write a program named checker that takes as an argument the stack a formatted
