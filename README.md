@@ -44,8 +44,6 @@ In this example, we’ll consider that both stacks grow from the right.
 
 ![Example of sorting stacks in project push_swap](https://github.com/Tilek12/42HN-push_swap/blob/master/.pics_push_swap/Screen%20Shot%202024-05-24%20at%2011.39.44%20AM.png)
 
-https://drive.google.com/file/d/1M19yxJ12nC6vzJqZZNUGedZ125_cSSkg/view?usp=sharing
-
 :eight_spoked_asterisk: **V.3 The "push_swap" program**
 
 **Program name**  - push_swap\
