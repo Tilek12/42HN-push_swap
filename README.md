@@ -1,7 +1,7 @@
 # 42Heilbronn 👽
 ## Project - Push_swap 📉:
 
-:white_check_mark: 125/125
+:white_check_mark: **125/125**
 
 :green_circle: **Mandatory part**
 
