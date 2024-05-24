@@ -1,4 +1,4 @@
-# 42Heilbronn 👽
+# 42Heilbronn :de:
 ## Project - Push_swap 📉:
 
 :white_check_mark: **125/125**
