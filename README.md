@@ -1,5 +1,5 @@
 # 42Heilbronn :de:
-## Project - Push_swap 📉:
+## Project - Push_swap 📉
 
 :white_check_mark: **125/125**
 
