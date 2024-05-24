@@ -5,7 +5,7 @@
 
 The Push swap project is a very simple and a highly straightforward algorithm project of sorting data.\
 You have at your disposal a set of integer values, 2 stacks, and a set of instructions to manipulate both stacks.\
-The program calculates and displays instructions on the standard output, that sorts the integers received as arguments.\
+The program calculates and displays instructions on the standard output, that sorts the integers received as arguments.
 
 **V.1 The rules**
 - You have 2 stacks named a and b.
