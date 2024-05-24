@@ -90,7 +90,7 @@ be **no more than 5500 operations**.
 
 :yellow_circle: **Bonus part**
 
-Checker program checks if the given instructions sorts the stack.
+Checker program checks if the given instructions sort the stack.
 
 **Program name** | checker
 |:---|:---|
