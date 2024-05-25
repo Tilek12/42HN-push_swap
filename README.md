@@ -1,15 +1,15 @@
 # 42Heilbronn :desktop_computer: :de:
 ## Project - Push_swap 📉
 
-:white_check_mark: **125/125**
+### :white_check_mark: **125/125**
 
-:green_circle: **Mandatory part**
+### :green_circle: **Mandatory part**
 
 The Push swap project is a very simple and a highly straightforward algorithm project of sorting data.\
 You have at your disposal a set of integer values, 2 stacks, and a set of instructions to manipulate both stacks.\
 The program calculates and displays instructions on the standard output, that sorts the integers received as arguments.
 
-:eight_spoked_asterisk: **V.1 The rules**
+### :eight_spoked_asterisk: **V.1 The rules**
 - You have 2 stacks named a and b.
 - At the beginning:
   - The stack a contains a random amount of negative and/or positive numbers
@@ -37,14 +37,14 @@ following operations at your disposal:
     The last element becomes the first one.
   * **rrr :** rra and rrb at the same time.
 
-:eight_spoked_asterisk: **V.2 Example**
+### :eight_spoked_asterisk: **V.2 Example**
 
 To illustrate the effect of some of these instructions, let’s sort a random list of integers.
 In this example, we’ll consider that both stacks grow from the right.
 
 ![Example of sorting stacks in project push_swap](https://github.com/Tilek12/42HN-push_swap/blob/master/.pics_push_swap/Screen%20Shot%202024-05-24%20at%2011.39.44%20AM.png)
 
-:eight_spoked_asterisk: **V.3 The "push_swap" program**
+### :eight_spoked_asterisk: **V.3 The "push_swap" program**
 
 **Program name** | push_swap
 |:---|:---|
@@ -88,7 +88,7 @@ be **no more than 5500 operations**.
 
 -------------------------------------------------------------------------------
 
-:yellow_circle: **Bonus part**
+### :yellow_circle: **Bonus part**
 
 Checker program checks if the given instructions sort the stack.
 
@@ -101,7 +101,7 @@ Checker program checks if the given instructions sort the stack.
 **Libft authorized** | Yes
 **Description** | Execute the sorting instructions
 
-:eight_pointed_black_star: Rules:
+### :eight_pointed_black_star: Rules:
 - Write a program named checker that takes as an argument the stack a formatted
 as a list of integers. The first argument should be at the top of the stack (be careful
 about the order). If no argument is given, it stops and displays nothing.
