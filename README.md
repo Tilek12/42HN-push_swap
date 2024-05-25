@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center">
- Project - Push_swap 📉
+ Project - Push_swap :bar_chart:
 </h1>
 
 <h2 align="center">
