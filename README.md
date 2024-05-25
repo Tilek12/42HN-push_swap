@@ -1,7 +1,17 @@
 # 42Heilbronn :desktop_computer: :de:
-## Project - Push_swap 📉
 
-### :white_check_mark: **125/125**
+<p align="center">
+  <img src="https://github.com/Tilek12/42-project-badges/blob/main/badges/push_swapm.png">
+</p>
+
+<h1 align="center">
+ Project - Push_swap 📉
+</h1>
+
+<h2 align="center">
+ :white_check_mark: 125/125
+</h2>
+
 
 ### :green_circle: **Mandatory part**
 
@@ -88,7 +98,7 @@ be **no more than 5500 operations**.
 
 -------------------------------------------------------------------------------
 
-### :yellow_circle: **Bonus part**
+### :star: **Bonus part**
 
 Checker program checks if the given instructions sort the stack.
 
