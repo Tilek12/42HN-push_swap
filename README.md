@@ -1,4 +1,4 @@
-# 42Heilbronn :desktop_computer: :de:
+# :desktop_computer: 42Heilbronn :de:
 
 <p align="center">
   <img src="https://github.com/Tilek12/42-project-badges/blob/main/badges/push_swapm.png">
@@ -12,8 +12,9 @@
  :white_check_mark: 125/125
 </h2>
 
+## :clipboard: Project info: [subject](https://github.com/Tilek12/42HN-push_swap/blob/master/.git_docs_push_swap/en.subject_push_swap.pdf)
 
-### :green_circle: **Mandatory part**
+## :green_circle: **Mandatory part**
 
 The Push swap project is a very simple and a highly straightforward algorithm project of sorting data.\
 You have at your disposal a set of integer values, 2 stacks, and a set of instructions to manipulate both stacks.\
@@ -52,7 +53,7 @@ following operations at your disposal:
 To illustrate the effect of some of these instructions, let’s sort a random list of integers.
 In this example, we’ll consider that both stacks grow from the right.
 
-![Example of sorting stacks in project push_swap](https://github.com/Tilek12/42HN-push_swap/blob/master/.pics_push_swap/Screen%20Shot%202024-05-24%20at%2011.39.44%20AM.png)
+![Example of sorting stacks in project push_swap](https://github.com/Tilek12/42HN-push_swap/blob/master/.git_docs_push_swap/Screen%20Shot%202024-05-24%20at%2011.39.44%20AM.png)
 
 ### :eight_spoked_asterisk: **V.3 The "push_swap" program**
 
@@ -98,7 +99,7 @@ be **no more than 5500 operations**.
 
 -------------------------------------------------------------------------------
 
-### :star: **Bonus part**
+## :star: **Bonus part**
 
 Checker program checks if the given instructions sort the stack.
 
@@ -126,5 +127,5 @@ output.
 are bigger than an integer, there are duplicates, an instruction doesn’t exist and/or
 is incorrectly formatted.
 
-![Example of the checker (bonus) in push_swap project](https://github.com/Tilek12/42HN-push_swap/blob/master/.pics_push_swap/Screen%20Shot%202024-05-24%20at%2012.11.19%20PM.png)
+![Example of the checker (bonus) in push_swap project](https://github.com/Tilek12/42HN-push_swap/blob/master/.git_docs_push_swap/Screen%20Shot%202024-05-24%20at%2012.11.19%20PM.png)
 
