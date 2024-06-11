@@ -129,3 +129,9 @@ is incorrectly formatted.
 
 ![Example of the checker (bonus) in push_swap project](https://github.com/Tilek12/42HN-push_swap/blob/master/.git_docs_push_swap/Screen%20Shot%202024-05-24%20at%2012.11.19%20PM.png)
 
+-------------------------------------------------------------------------------
+
+## :large_blue_diamond: Visualizer 
+
+This [Visualizer program]()  was used to check the sorting algorithm and to show how sorting works.
+
