@@ -87,7 +87,7 @@ prompt back.
 Errors include for example: some arguments aren’t integers, some arguments are
 bigger than an integer and/or there are duplicates.
 
-:eight_spoked_asterisk: **V.4 Benchmark**
+### :eight_spoked_asterisk: V.4 Benchmark
 
 To validate this project, you must perform certain sorts with a minimal number of operations:
 - For a **minimalist validation** (that implies a minimal grade of 80), you must be
@@ -131,7 +131,7 @@ is incorrectly formatted.
 
 -------------------------------------------------------------------------------
 
-## :large_blue_diamond: Visualizer 
+## :large_blue_circle: Visualizer 
 
 This [Visualizer program](https://github.com/o-reo/push_swap_visualizer)  was used to check the sorting algorithm and to show how sorting works.
 
