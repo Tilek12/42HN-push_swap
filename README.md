@@ -53,7 +53,7 @@ following operations at your disposal:
 To illustrate the effect of some of these instructions, let’s sort a random list of integers.
 In this example, we’ll consider that both stacks grow from the right.
 
-![Example of sorting stacks in project push_swap](https://github.com/Tilek12/42HN-push_swap/blob/master/.git_docs_push_swap/Screen%20Shot%202024-05-24%20at%2011.39.44%20AM.png)
+![Example of sorting stacks in project push_swap](https://github.com/Tilek12/42HN-push_swap/blob/master/.git_docs_push_swap/push_swap_img_1.png)
 
 ### :eight_spoked_asterisk: **V.3 The "push_swap" program**
 
@@ -127,7 +127,7 @@ output.
 are bigger than an integer, there are duplicates, an instruction doesn’t exist and/or
 is incorrectly formatted.
 
-![Example of the checker (bonus) in push_swap project](https://github.com/Tilek12/42HN-push_swap/blob/master/.git_docs_push_swap/Screen%20Shot%202024-05-24%20at%2012.11.19%20PM.png)
+![Example of the checker (bonus) in push_swap project](https://github.com/Tilek12/42HN-push_swap/blob/master/.git_docs_push_swap/push_swap_img_2.png)
 
 -------------------------------------------------------------------------------
 
