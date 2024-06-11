@@ -135,3 +135,4 @@ is incorrectly formatted.
 
 This [Visualizer program](https://github.com/o-reo/push_swap_visualizer)  was used to check the sorting algorithm and to show how sorting works.
 
+https://github.com/Tilek12/42HN-push_swap/assets/62654424/914da9a1-f1ee-4950-b88a-aca365945ab5
