@@ -133,5 +133,5 @@ is incorrectly formatted.
 
 ## :large_blue_diamond: Visualizer 
 
-This [Visualizer program]()  was used to check the sorting algorithm and to show how sorting works.
+This [Visualizer program](https://github.com/o-reo/push_swap_visualizer)  was used to check the sorting algorithm and to show how sorting works.
 
